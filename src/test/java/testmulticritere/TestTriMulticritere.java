@@ -3,6 +3,7 @@ package testmulticritere;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
@@ -49,6 +50,24 @@ public class TestTriMulticritere {
 		List<? extends TriableMultiCriteresAlphabetiques> resultat = TrieurMultiCriteresAlphabetique.trie(personnes, criteres);
 		Assert.assertEquals(personnes.size(), resultat.size());
 		Assert.assertTrue(((Personne) resultat.get(0)).getVille().startsWith("aalborg"));
+	}
+	
+	/**
+	 * Test pour vérifier que l'espace est considéré comme inférieur au caractère usuels
+	 */
+	@Test
+	public void testSeparateur() {
+		String aux1 = "toto@";
+		String aux2 = "toto ";
+		String aux3 = "toto1";
+		String aux4 = "totoa";
+		List<String> aux = new ArrayList<String>();
+		aux.add(aux1);
+		aux.add(aux2);
+		aux.add(aux3);
+		aux.add(aux4);
+		Collections.sort(aux);
+		Assert.assertEquals(aux.get(0), aux2);
 	}
 	
 	@Test

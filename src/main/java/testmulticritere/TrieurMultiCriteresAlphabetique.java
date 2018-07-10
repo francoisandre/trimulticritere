@@ -9,7 +9,8 @@ import java.util.UUID;
 
 public class TrieurMultiCriteresAlphabetique {
 
-	public final static String SEPARATEUR = "@@@";
+	//Le séparateur doit être une chaine assez longue répétant un caractère le plus bas possible dans la comparaison, ici l'espace.
+	public final static String SEPARATEUR = "          ";
 
 	public static List<? extends TriableMultiCriteresAlphabetiques> trie(List<? extends TriableMultiCriteresAlphabetiques> entrants, CriteresTri criteresTri) {
 
