@@ -1,6 +1,6 @@
 package testmulticritere;
 
-public interface TriableMultiCriteresAlphabetiques {
+public interface TriableMultiCriteresAlphabetiques extends TriableMultiCriteres {
 	
 	String calculeClePourCritere(String nomCritere);
 
